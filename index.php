@@ -4,7 +4,11 @@ require_once 'Welcome.php';
 // delete condition
 if(isset($_GET['delete_id']))
 {
-	//delete function call
+    //delete function call
+    $sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
+	mysqli_query($con,$sql_query);
+    header("Location: $_SERVER[PHP_SELF]");
+
 
 }
 // delete condition
@@ -46,7 +50,7 @@ function delete_id(id)
 	<div id="content">
     <table align="center">
     <tr>
-    <th colspan="5"><a href="add_data.php">add data here.</a></th>
+    <th colspan="5"><a href="add_data.php">add 11 data here.</a></th>
     </tr>
     <th>First Name</th>
     <th>Last Name</th>
